@@ -1,7 +1,15 @@
 # Additional requirements
 * fd-find (`sudo apt install fd-find`)
+* ripgrep (`sudo apt install ripgrep`)
 
 # Key-Bindings
+## NeoTree
+* LEADER e - Toggles the file explorer
+
+## Telescope
+* LEADER sg - Search in files
+
+
 ## Buffer
 * Shift-PageUp - prev Buffer
 * Shift-PageDown - next Buffer
@@ -28,3 +36,20 @@
 ### Python
 * LEADER dpt - test current test function
 * LEADER dpc - test current test class
+
+# Colorschemes
+Previously used
+
+## Sonokai
+```lua
+return {
+  { "sainnhe/sonokai" },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "sonokai",
+    },
+  },
+}
+
+```

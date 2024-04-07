@@ -1,9 +1,9 @@
 return {
-  { "sainnhe/sonokai" },
+  { "rebelot/kanagawa.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "sonokai",
+      colorscheme = "kanagawa",
     },
   },
 }

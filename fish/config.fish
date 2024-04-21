@@ -44,3 +44,23 @@ end
 function llt
     eza --tree -L 3 $argv
 end
+
+function gs
+    git status
+end
+
+function gd
+    git diff $argv
+end
+
+function gc
+    git commit $argv
+end
+
+function gt
+    git tag $argv
+end
+
+function gp
+    git push $argv
+end

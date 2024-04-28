@@ -64,3 +64,7 @@ end
 function gp
     git push $argv
 end
+
+function fc --wraps fzf --description 'wrapper around fzf to put the selected text in the clipboard'
+    eval "$argv" | fzf -e | xclip -r -selection clipboard
+end

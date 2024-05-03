@@ -1,10 +1,12 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set -gx PATH $PATH ~/.local/bin
+    set -gx EDITOR nvim
 end
 
 if status --is-login
     set -gx PATH $PATH ~/.local/bin
+    set -gx EDITOR nvim
 end
 
 set -g fish_greeting
@@ -63,4 +65,19 @@ end
 
 function gp
     git push $argv
+end
+
+function gl
+    git pull $argv
+end
+
+function kc
+    kubectl $argv
+end
+
+function dsecret --wraps kubectl --description 'decodes a selected secret from k8s'
+    set -x SECRET (kubectl get secret -o name | fzf)
+    set -x ENTRY_RAW (kubectl describe $SECRET | fzf)
+    set -x ENTRY (echo $ENTRY_RAW | sed -e 's-:.*--')
+    kubectl get $SECRET --template="'{{index .data \"$ENTRY\"}}'" | xargs echo | base64 -d
 end

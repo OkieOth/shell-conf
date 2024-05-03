@@ -244,11 +244,7 @@ default_layout "compact"
 //   - true (default)
 //   - false
 //
-<<<<<<< HEAD
-//mouse_mode false
-=======
 mouse_mode true
->>>>>>> 825e8bf9081b571a1bb688bc877c8e23d00c9e22
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back

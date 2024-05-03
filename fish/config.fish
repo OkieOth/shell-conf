@@ -67,7 +67,6 @@ function gp
     git push $argv
 end
 
-<<<<<<< HEAD
 function gl
     git pull $argv
 end
@@ -81,8 +80,8 @@ function dsecret --wraps kubectl --description 'decodes a selected secret from k
     set -x ENTRY_RAW (kubectl describe $SECRET | fzf)
     set -x ENTRY (echo $ENTRY_RAW | sed -e 's-:.*--')
     kubectl get $SECRET --template="'{{index .data \"$ENTRY\"}}'" | xargs echo | base64 -d
-=======
+end
+
 function fc --wraps fzf --description 'wrapper around fzf to put the selected text in the clipboard'
     eval "$argv" | fzf -e | xclip -r -selection clipboard
->>>>>>> 825e8bf9081b571a1bb688bc877c8e23d00c9e22
 end

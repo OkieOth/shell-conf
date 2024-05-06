@@ -13,10 +13,6 @@ function ssh_pwd --wraps ssh --description 'alias for ssh with enforced password
     ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password $argv
 end
 
-function cat --wraps cat --description 'alias to wrap cat with bat'
-    bat $argv
-end
-
 function gdb --wraps git --description 'alias wrapper to combine git diff with bat'
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
 end

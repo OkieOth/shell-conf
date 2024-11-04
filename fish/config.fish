@@ -15,10 +15,6 @@ function ssh_pwd --wraps ssh --description 'alias for ssh with enforced password
     ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password $argv
 end
 
-function cat --wraps cat --description 'alias to wrap cat with bat'
-    bat $argv
-end
-
 function gdb --wraps git --description 'alias wrapper to combine git diff with bat'
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
 end
@@ -92,4 +88,68 @@ end
 
 function fc --wraps fzf --description 'wrapper around fzf to put the selected text in the clipboard'
     eval "$argv" | fzf -e | xclip -r -selection clipboard
+end
+
+function createDirIfNotExists
+    if not test -d "$argv[1]"
+        if not mkdir "$argv[1]"
+            echo "error while creating dir: $argv[1], cancel additional steps"
+            exit 1
+        else
+            echo "  created: $argv[1]"
+        end
+    end
+end
+
+function initGolangRepo --description 'inits the current dir with the default golang repo structure'
+    createDirIfNotExists "api"
+    createDirIfNotExists "assets"
+    createDirIfNotExists "build"
+    createDirIfNotExists "cmd"
+    createDirIfNotExists "configs"
+    createDirIfNotExists "docs"
+    createDirIfNotExists "internal"
+    createDirIfNotExists "internal/pkg"
+    createDirIfNotExists "pkg"
+    createDirIfNotExists "scripts"
+    createDirIfNotExists "test"
+    createDirIfNotExists "tools"
+
+    if not test -f "README.md"
+        echo "# TODO - Describe the project" > README.md
+    end
+
+    if not test -f ".gitignore"
+        begin
+            echo "# If you prefer the allow list template instead of the deny list, see community template:" > .gitignore
+            echo "# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore" >> .gitignore
+            echo "#" >> .gitignore
+            echo "# Binaries for programs and plugins" >> .gitignore
+            echo "*.exe" >> .gitignore
+            echo "*.exe~" >> .gitignore
+            echo "*.dll" >> .gitignore
+            echo "*.so" >> .gitignore
+            echo "*.dylib" >> .gitignore
+            echo "" >> .gitignore
+            echo "# Test binary, built with \`go test -c\`" >> .gitignore
+            echo "*.test" >> .gitignore
+            echo "" >> .gitignore
+            echo "# Output of the go coverage tool, specifically when used with LiteIDE" >> .gitignore
+            echo "*.out" >> .gitignore
+            echo "" >> .gitignore
+            echo "# Dependency directories (remove the comment below to include it)" >> .gitignore
+            echo "# vendor/" >> .gitignore
+            echo "" >> .gitignore
+            echo "# Go workspace file" >> .gitignore
+            echo "go.work" >> .gitignore
+            echo "go.work.sum" >> .gitignore
+            echo "" >> .gitignore
+            echo "# env file" >> .gitignore
+            echo ".env" >> .gitignore
+            echo "" >> .gitignore
+            echo "*.tmp" >> .gitignore
+            echo "tmp" >> .gitignore
+            echo "temp" >> .gitignore
+        end
+    end
 end

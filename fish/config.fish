@@ -89,9 +89,9 @@ end
 function dsecretns --wraps kubectl --description 'decodes a selected secret from k8s'
     set -x NAMESPACE (kubectl get namespace -o name | fzf | sed -e 's-.*/--')
     set -x SECRET (kubectl get secret -n $NAMESPACE -o name | fzf)
-    set -x ENTRY_RAW (kubectl describe -n tms $SECRET | fzf)
+    set -x ENTRY_RAW (kubectl describe -n $NAMESPACE $SECRET | fzf)
     set -x ENTRY (echo $ENTRY_RAW | sed -e 's-:.*--')
-    kubectl get -n tms $SECRET --template="'{{index .data \"$ENTRY\"}}'" | xargs echo | base64 -d
+    kubectl get -n $NAMESPACE $SECRET --template="'{{index .data \"$ENTRY\"}}'" | xargs echo | base64 -d
 end
 
 function fc --wraps fzf --description 'wrapper around fzf to put the selected text in the clipboard'

@@ -1,5 +1,8 @@
 # Version
 
+## 0.4.0
+* adding zed config
+
 ## 0.3.0
 
 * dap and lsp is working for Rust

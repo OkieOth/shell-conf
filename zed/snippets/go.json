@@ -1,0 +1,33 @@
+{
+    "YAML annotation": {
+        "prefix": "yaml",
+        "body": ["`yaml:\"$0\"`"],
+        "description": "Puts the yaml annotation after a struct field declaration"
+    },
+    "Test Stub": {
+        "prefix": "testfunc",
+        "body": [
+            "func Test$0(t *testing.T) {",
+            "    tests := []struct {",
+            "        dummy  string",
+            "        checkFunc  func(data any) bool",
+            "    }{",
+            "        {",
+            "            dummy:  \"xxxx\",",
+            "            checkFunc: func(data any) bool {",
+            "                fmt.Println(\"data\", data)",
+            "                return false // TODO",
+            "            },",
+            "        },",
+            "    }",
+            "",
+            "    for _, test := range tests {",
+            "        // TODO things",
+            "        s := \"dummy\"",
+            "        require.True(t, test.checkFunc(s))",
+            "    }",
+            "}",
+            ""
+        ]
+    }
+}

@@ -1,0 +1,43 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+      "cmd-shift-e": "project_panel::ToggleFocus",
+      "ctrl-win-down": "workspace::ActivatePaneDown",
+      "ctrl-win-up": "workspace::ActivatePaneUp",
+      "ctrl-win-left": "workspace::ActivatePaneLeft",
+      "ctrl-win-right": "workspace::ActivatePaneRight",
+      "ctrl-t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+        "ctrl-t": "workspace::ToggleBottomDock",
+        "ctrl-n": "workspace::NewTerminal",
+        "alt-left": "pane::ActivatePreviousItem",
+        "alt-right": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "OutlinePanel",
+    "bindings": {
+        "ctrl-shift-b": "workspace::ToggleRightDock",
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+        "ctrl-win-h": "pane::SplitLeft",
+        "ctrl-win-v": "pane::SplitDown",
+    }
+  }
+]

@@ -1,0 +1,31 @@
+{
+    "Exit on error": {
+        "prefix": "exitonerror",
+        "body": [
+            "if ! $1; then",
+            "    echo \"Error while $2\"",
+            "    exit 1",
+            "fi",
+            ""
+        ],
+        "description": "Add and exit 1 block with an optional command to the file"
+    },
+    "File from multiline string": {
+        "prefix": "fileFromHereDoc",
+        "body": [
+            "cat << 'EOF' > \"$1\"",
+            "#!/bin/bash",
+            "scriptPos=\\${0%/*}",
+            "",
+            "${2:Write your code here}",
+            "EOF",
+            ""
+        ],
+        "description": "Creating a file out of a heredoc"
+    },
+    "ScriptPos Var Definition": {
+        "prefix": "scriptPosVar",
+        "body": ["scriptPos=\\${0%/*}"],
+        "description": "Inserts the scriptPos var definition"
+    }
+}

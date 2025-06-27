@@ -29,5 +29,19 @@
             "}",
             ""
         ]
+    },
+    "Requires Equal": {
+        "prefix": "requiresEqual",
+        "body": ["require.Equal(t, ${1:expected}, ${2:actual}, ${3:message})"],
+        "description": "insert requires.Equal line"
+    },
+    "Handle Error And Return": {
+        "prefix": "handleErrorAndReturn",
+        "body": [
+            "if err != nil {",
+            "    return fmt.Errorf(\"Error while $1: \\$v\", err)",
+            "}"
+        ],
+        "description": "Handles err and returns a combined error"
     }
 }

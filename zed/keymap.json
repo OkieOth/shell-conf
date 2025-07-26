@@ -39,5 +39,40 @@
             "ctrl-win-h": "pane::SplitRight",
             "ctrl-win-v": "pane::SplitDown"
         }
+    },
+    {
+      "context": "Editor",
+      "bindings": {
+        "ctrl-1": [
+          "editor::MoveToBeginningOfLine",
+          {
+            "stop_at_soft_wraps": true,
+            "stop_at_indent": true
+          }
+        ]
+      }
+    },
+    {
+      "context": "Editor",
+      "bindings": {
+        "ctrl-!": "editor::MoveToBeginning"
+      }
+    },
+    {
+      "context": "Editor",
+      "bindings": {
+        "ctrl-\"": "editor::MoveToEnd"
+      }
+    },
+    {
+      "context": "Editor",
+      "bindings": {
+        "ctrl-2": [
+          "editor::MoveToEndOfLine",
+          {
+            "stop_at_soft_wraps": true
+          }
+        ]
+      }
     }
 ]

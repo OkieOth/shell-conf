@@ -4,6 +4,19 @@
         "body": ["`yaml:\"$0\"`"],
         "description": "Puts the yaml annotation after a struct field declaration"
     },
+    "YAML omitempty annotation": {
+        "prefix": "yaml_omitempty",
+        "body": ["`yaml:\"$0,omitempty\"`"],
+        "description": "Puts the yaml annotation after a struct field declaration"
+    },
+    "JSON annotation": {
+        "prefix": "json",
+        "body": ["`json:\"$0,omitempty\"`"]
+    },
+    "JSON ommitempty annotation": {
+        "prefix": "json_omitempty",
+        "body": ["`json:\"$0,omitempty\"`"]
+    },
     "Test Stub": {
         "prefix": "testfunc",
         "body": [

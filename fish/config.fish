@@ -5,7 +5,7 @@ if status is-interactive
 end
 
 if status --is-login
-    set -gx PATH $PATH ~/.local/bin
+    set -gx PATH $PATH ~/.local/bin ~/go/bin
     set -gx EDITOR nvim
 end
 
@@ -96,6 +96,10 @@ end
 
 function fc --wraps fzf --description 'wrapper around fzf to put the selected text in the clipboard'
     eval "$argv" | fzf -e | xclip -r -selection clipboard
+end
+
+function containerlogs --wraps fzf --description 'uses fzf to pick a specific container and print its logs'
+    docker ps | fzf -e | awk '{print $1}' | xargs docker logs -f
 end
 
 function createDirIfNotExists

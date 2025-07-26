@@ -1,0 +1,9 @@
+{
+    "GitHub TODO": {
+        "prefix": "githubtodo",
+        "body": [
+            "![WIP](https://img.shields.io/badge/work%20in%20progress-red)"
+        ],
+        "description": "Markdown badge for github hosted projects"
+    }
+}

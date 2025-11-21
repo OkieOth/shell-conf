@@ -74,5 +74,28 @@
           }
         ]
       }
+    },
+    {
+      "bindings": {
+        "ctrl-3": "editor::GoToDeclaration"
+      }
+    },
+    {
+      "context": "Editor",
+      "bindings": {
+        "ctrl-6": "editor::GoToDefinition"
+      }
+    },
+    {
+      "context": "Editor",
+      "bindings": {
+        "ctrl-5": "editor::Delete"
+      }
+    },
+    {
+      "context": "Editor",
+      "bindings": {
+        "ctrl-alt-s": "editor::DeleteToPreviousSubwordStart"
+      }
     }
 ]

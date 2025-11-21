@@ -1,0 +1,40 @@
+{
+  "JsonSchema": {
+    "prefix": "stubSchema",
+    "body": [
+      "  \"\\$schema\": \"http://json-schema.org/draft-07/schema#\",",
+      "  \"title\": \"$1\",",
+      "  \"description\": \"$2\",",
+      "  \"version\": \"$3\",",
+      "  \"definitions\": {",
+      "  }"
+    ],
+    "description": "Creates the base of a JSON schema"
+  },
+  "JSON Type": {
+    "prefix": "type",
+    "body": [
+      "    \"$1\": {",
+      "      \"type\": \"object\",",
+      "      \"description\": \"$2\",",
+      "      \"properties\": {",
+      "      }",
+      "    },"
+    ],
+    "description": "Creates the Simple JSON type"
+  },
+  "JSON EnumType": {
+    "prefix": "enumType",
+    "body": [
+      "    \"$1\": {",
+      "      \"type\": \"string\",",
+      "      \"description\": \"$2\",",
+      "      \"enum\": [",
+      "        \"$3\",",
+      "        \"$4\"",
+      "      ]",
+      "    },"
+    ],
+    "description": "Creates the JSON enum type"
+  }
+}

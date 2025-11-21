@@ -1,12 +1,21 @@
+function fish_prompt
+    set_color cyan
+    echo -n (prompt_pwd)
+    set_color yellow
+    echo -n (fish_vcs_prompt)
+    set_color normal
+    echo -n '> '
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    set -gx PATH $PATH ~/.local/bin
-    set -gx EDITOR nvim
+    set -gx PATH $PATH ~/.local/bin ~/go/bin
+    set -gx EDITOR hx
 end
 
 if status --is-login
     set -gx PATH $PATH ~/.local/bin ~/go/bin
-    set -gx EDITOR nvim
+    set -gx EDITOR hx
 end
 
 set -g fish_greeting
@@ -165,4 +174,4 @@ function initGolangRepo --description 'inits the current dir with the default go
         end
     end
 end
-set -gx PATH /home/eikothomas/.krew/bin:/home/eikothomas/prog/git/fzf/bin:/home/eikothomas/.cargo/bin:/home/eikothomas/.local/bin:/home/eikothomas/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eikothomas/.local/bin:/home/eikothomas/.local/bin /home/eikothomas/.krew/bin
+set -gx PATH /home/eikothomas/.krew/bin:/home/eikothomas/prog/git/fzf/bin:/home/eikothomas/.cargo/bin:/home/eikothomas/.local/bin:/home/eikothomas/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eikothomas/.local/bin:/home/eikothomas/.local/bin /home/eikothomas/.krew/bin /home/eikothomas/go/bin

@@ -122,11 +122,16 @@ function createDirIfNotExists
     end
 end
 
+function logout --description 'logging out of KDE session from the terminal'
+    qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+end
+
 function initGolangRepo --description 'inits the current dir with the default golang repo structure'
     createDirIfNotExists api
     createDirIfNotExists assets
     createDirIfNotExists build
     createDirIfNotExists cmd
+    createDirIfNotExists cmd/sub
     createDirIfNotExists configs
     createDirIfNotExists docs
     createDirIfNotExists internal
@@ -175,3 +180,6 @@ function initGolangRepo --description 'inits the current dir with the default go
     end
 end
 set -gx PATH /home/eikothomas/.krew/bin:/home/eikothomas/prog/git/fzf/bin:/home/eikothomas/.cargo/bin:/home/eikothomas/.local/bin:/home/eikothomas/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eikothomas/.local/bin:/home/eikothomas/.local/bin /home/eikothomas/.krew/bin /home/eikothomas/go/bin
+
+# opencode
+fish_add_path /home/eikothomas/.opencode/bin

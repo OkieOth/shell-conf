@@ -7,28 +7,64 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-	"agent": {
-  "default_model": {
-   "provider": "ollama",
-   "model": "minimax-m2:cloud"
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
   },
-  "model_parameters": []
- },
- "terminal": {
-		"dock": "bottom"
-	},
-	"vim_mode": false,
-	"outline_panel": {
-		"dock": "right"
-	},
-	"ui_font_size": 16,
-	"buffer_font_size": 16,
-	"theme": {
-		"mode": "system",
-		"light": "One Light",
-		"dark": "One Dark"
-	},
-	"autosave": "on_focus_change",
-	"hard_tabs": false,
-	"tab_size": 2
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "debugger": {
+    "format_dap_log_messages": false
+  },
+  "colorize_brackets": true,
+  "inlay_hints": {
+    "show_type_hints": false,
+    "show_value_hints": false,
+  },
+  "show_edit_predictions": false,
+  "disable_ai": true,
+  "languages": {
+    "Rust": {
+      "tasks": {
+        "prefer_lsp": true
+      },
+      "inlay_hints": {
+        "enabled": true,
+      },
+    },
+  },
+  "cursor_blink": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "terminal": {
+    "dock": "bottom",
+  },
+  "vim_mode": false,
+  "outline_panel": {
+    "dock": "right",
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_features": {
+    "calt": false,
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "autosave": "on_focus_change",
+  "hard_tabs": false,
+  "tab_size": 2,
 }
